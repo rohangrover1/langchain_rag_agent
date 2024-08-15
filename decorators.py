@@ -12,7 +12,6 @@ def error_traceback(func, *args, **kwargs):
     # functions like in this case "func"
     def inner1(*args, **kwargs):
         try:
-            print("NAME:{} ARGS:{} KWARGS:{}".format(func.__name__, len(args), len(kwargs)))
             out = func(*args, **kwargs)
             return out
         except Exception as e:

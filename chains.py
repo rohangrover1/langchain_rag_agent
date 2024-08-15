@@ -40,7 +40,7 @@ class pdf_rag():
         # create the retriver
         text_splitter = RecursiveCharacterTextSplitter(chunk_size=1000, chunk_overlap=200, add_start_index=True)
         splits = text_splitter.split_documents(main_docs)
-        vectorstore = Chroma.from_documents(documents=splits, embedding=OpenAIEmbeddings())
+        vectorstore = Chroma.from_documents(documents=splits, embedding=OpenAIEmbeddings(api_key=open_ai_key))
     
         # Retrieve and generate using the relevant snippets of the blog.
         retriever = vectorstore.as_retriever(
@@ -52,7 +52,7 @@ class pdf_rag():
         # create the prompt
         prompt_str = """You are an assistant for question-answering tasks. \
             Use the following pieces of retrieved context to answer the question. \
-            If you don't know the answer, just say that you don't know. \
+            If you don't know the answer, just say 'Information not present in document'. \
             Use three sentences maximum and keep the answer concise.\
             Context: {context} \
             Question: {question} \
