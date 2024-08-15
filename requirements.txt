@@ -1,0 +1,13 @@
+python-dotenv==1.0.1
+openai==1.37.0
+langchain==0.2.11
+langchain-community==0.2.10
+langchain-core==0.2.23
+langchain-openai==0.1.17
+langchain-experimental==0.0.63
+gradio==4.38.1
+gradio_client==1.1.0
+pypdf==4.3.1
+faiss-cpu==1.8.0.post1
+langchain-chroma==0.1.2
+langchainhub==0.1.20
