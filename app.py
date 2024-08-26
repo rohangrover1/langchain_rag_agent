@@ -70,6 +70,7 @@ if __name__ == "__main__":
         with gr.Row():
             result_text = gr.Textbox(label="Response output:", lines=10, interactive=False)
             images_output = gr.Textbox(label="Meta Data")
+            
 
         # if the model changes to "dall-e-3", we need to change the resolution and n
         generate_button.click(
